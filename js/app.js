@@ -5,6 +5,7 @@ const a = document.querySelector('.opt1')
 const b = document.querySelector('.opt2')
 const c = document.querySelector('.opt3')
 const d = document.querySelector('.opt4')
+let q = 1
 let arr = []
 let answer = ''
 let choice = ''
@@ -50,31 +51,31 @@ let questQ = [
 // d = 0,3,5,10
 
 function generateQ() {
-	let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
-	for(let i = 0; i<10; i++){
-		if(qChoice === arr[i]) {
-			console.log('Same number occurred, regenerating')
-			qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
+	if(q < 11) {
+		qns.innerText = `Question ${q}/10`
+		let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
+		for(let i = 0; i<10; i++){
+			while(qChoice == arr[i]) {
+				console.log(`Same number: ${qChoice}`)
+				qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
+			}
 		}
-	}
-	arr.push(qChoice)
-	console.log(arr)
-	
-	if(qChoice === 1 || qChoice === 6 || qChoice === 11 || qChoice === 14) {
-		answer = 'A'
-	} else if(qChoice === 2 || qChoice === 4 || qChoice === 8 || qChoice === 13) {
-		answer = 'B'
-	} else if (qChoice === 7 || qChoice === 9 || qChoice === 12) {
-		answer = 'C'
-	} else answer = 'D'
-	// console.log(qChoice)
-	console.log(answer)
-	question.innerHTML = questQ[qChoice][0]
-	a.innerText = `A - ${questQ[qChoice][1]}`
-	b.innerText = `B - ${questQ[qChoice][2]}`
-	c.innerText = `C - ${questQ[qChoice][3]}`
-	d.innerText = `D - ${questQ[qChoice][4]}`
-	click = false
+		arr.push(qChoice)
+		if(qChoice === 1 || qChoice === 6 || qChoice === 11 || qChoice === 14) {
+			answer = 'A'
+		} else if(qChoice === 2 || qChoice === 4 || qChoice === 8 || qChoice === 13) {
+			answer = 'B'
+		} else if (qChoice === 7 || qChoice === 9 || qChoice === 12) {
+			answer = 'C'
+		} else answer = 'D'
+		question.innerHTML = questQ[qChoice][0]
+		a.innerText = `A - ${questQ[qChoice][1]}`
+		b.innerText = `B - ${questQ[qChoice][2]}`
+		c.innerText = `C - ${questQ[qChoice][3]}`
+		d.innerText = `D - ${questQ[qChoice][4]}`
+		click = false
+		q++
+	} else finishGame()
 }
 generateQ()
 
@@ -82,8 +83,16 @@ function checkAnswer() {
 	click = true
 	if(choice === answer) {
 		console.log('You are Correct!')
-	} else console.log('You are Incorrect!')
-	setTimeout(generateQ, 5000)
+		score += 50
+	} else {
+		console.log('You are Incorrect!')
+		score -= 10
+	}
+	setTimeout(generateQ, 0000)
+}
+
+function finishGame() {
+	console.log("Your game has finished!")
 }
 
 
