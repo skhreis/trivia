@@ -1,0 +1,68 @@
+head {
+	text-align: center;
+}
+
+body {
+	text-align: center;
+	background-image: url('https://images.unsplash.com/photo-1496205856088-91b021308c54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.qnumscore {
+	position: absolute;
+	top:0%;
+	text-align: center;
+	align-items: center;
+	height: 200px;
+	background-color: green;
+}
+
+
+
+
+
+
+.opt1 {
+	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+	background-color: whitesmoke;
+	border: whitesmoke;
+	height: 150px;
+	width: 450px;
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	
+}
+.opt2 {
+	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+	background-color: whitesmoke;
+	height: 150px;
+	width: 450px;
+	border: whitesmoke;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 25px;
+}
+.opt3 {
+	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+	background-color: whitesmoke;
+	height: 150px;
+	width: 450px;
+	border: whitesmoke;
+	position: absolute;
+	top: 75%;
+	left: 25%;
+}
+.opt4 {
+	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+	background-color: whitesmoke;
+	height: 150px;
+	width: 450px;
+	border: whitesmoke;
+	position: absolute;
+	top: 75%;
+	margin-left: 25px;
+}
+

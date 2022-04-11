@@ -30,21 +30,6 @@ let questQ = [
 	['Which animal can be seen on the Porsche logo?', 'Donkey', 'Horse', 'Llama', 'Cheetah'],
 	["Which monarch officially made Valentine's Day a holiday in 1537?", 'Henry VIII', 'William IV', 'George I', 'Victoria']
 ]
-// let q0Opt = ['Microsoft', 'David Kelly', 'IBM', ' David Eddy'] // David Eddy d
-// let q1Opt = ['World Web Wide', 'World Wide Web', 'Web World Wide', 'Width of World Web'] // World Wide Web a
-// let q2Opt = ['25 Meters', '50 Meters', '75 Meters', '100 Meters'] // 50 Meters b
-// let q3Opt = ['Italy, France, Austria', 'Germany, Austria, Poland', 'Japan, China, Germany', 'Italy, Germany, Japan'] // Italy, Germany, Japan d
-// let q4Opt = ['New Zealand', 'Australia', 'Indonesia', 'Great Britan'] // Australia b
-// let q5Opt = ['Hexagon', 'Heptagon', 'Enneagon', 'Octogon'] // Octogon d
-// let q6Opt = ['Fear of Dogs', 'Fear of Animals', 'Fear of Cryo', 'Fear of Cyno'] // Fear of Dogs a
-// let q7Opt = ['Period', 'Question Mark', 'Exclamation Point', 'Comma'] // Exclamation Point c
-// let q8Opt = ['Christopher Columbus', 'Ferdinand Magellan', "Vasco da Gama's", 'Prince Vijaya'] // Ferdinand Magellan b
-// let q9Opt = ['11', '9', '12', '10'] // 12 c
-// let q10Opt = ['One', 'Two', 'Three', 'Four'] // Four d
-// let q11Opt = ['Pierre Omidyar', 'Jeff Bezos', 'Bill Gates', 'Nick Huzar'] // Pierre Omidyar a
-// let q12Opt = ['Apple', 'Sony', 'Samsung', 'Nintendo'] // Samsung c
-// let q13Opt = ['Donkey', 'Horse', 'Llama', 'Cheetah'] // Horse b
-// let q14Opt = ['Henry VIII', 'William IV', 'George I', 'Victoria'] // Henry VIII a
 
 // a = 1,6,11,14
 // b = 2,4,8,13
@@ -53,7 +38,7 @@ let questQ = [
 
 function generateQ() {
 	if(q < 11) {
-		qns.innerHTML = `Question ${q}/10 <br /><br />Score ${score}`
+		qns.innerHTML = `<br /><br />Question ${q}/10 <br /><br /><br /><br /><br />Score ${score}`
 		let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
 		for(let i = 0; i<10; i++){
 			while(qChoice == arr[i]) {
