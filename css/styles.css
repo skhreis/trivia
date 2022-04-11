@@ -4,65 +4,73 @@ head {
 
 body {
 	text-align: center;
-	background-image: url('https://images.unsplash.com/photo-1496205856088-91b021308c54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80');
-	background-repeat: no-repeat;
-	background-size: 100%;
+	background-color: #45665b;
+}
+
+
+.question {
+	position: relative;
+	align-items: center;
+	text-align: center;
+	display: inline-block;
+	height: 150px;
+	width: 300px;
+	background-color: #4B4866;
+	box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
 }
 
 .qnumscore {
-	position: absolute;
-	top:0%;
+	position: relative;
 	text-align: center;
 	align-items: center;
+	display: inline-block;
 	height: 200px;
-	background-color: green;
+	width: 500px;
+	background-color: #304740;
+	box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
+
 }
 
-
-
-
-
-
 .opt1 {
-	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-	background-color: whitesmoke;
-	border: whitesmoke;
-	height: 150px;
-	width: 450px;
-	position: absolute;
-	top: 50%;
-	left: 25%;
+	position: relative;
+	display: inline;
+	margin-bottom: 15px;
+	background-color: #455566;
+	height: 50px;
+	width: 300px;
+	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
+	border: #455566;
 	
 }
 .opt2 {
-	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-	background-color: whitesmoke;
-	height: 150px;
-	width: 450px;
-	border: whitesmoke;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: 25px;
+	position: relative;
+	display: inline;
+	margin-bottom: 15px;
+	margin-right: 7px;
+	background-color: #455566;
+	height: 50px;
+	width: 300px;
+	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
+	border: #455566;
 }
 .opt3 {
-	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-	background-color: whitesmoke;
-	height: 150px;
-	width: 450px;
-	border: whitesmoke;
-	position: absolute;
-	top: 75%;
-	left: 25%;
+	position: relative;
+	margin-bottom: 15px;
+	margin-left: 8px;
+	background-color: #455566;
+	height: 50px;
+	width: 300px;
+	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
+	border: #455566;
+	display: inline;
 }
 .opt4 {
-	clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-	background-color: whitesmoke;
-	height: 150px;
-	width: 450px;
-	border: whitesmoke;
-	position: absolute;
-	top: 75%;
-	margin-left: 25px;
+	position: relative;
+	background-color: #455566;
+	height: 50px;
+	width: 300px;
+	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
+	border: #455566;
+	display: inline;
 }
 

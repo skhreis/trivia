@@ -54,7 +54,7 @@ function generateQ() {
 		} else if (qChoice === 7 || qChoice === 9 || qChoice === 12) {
 			answer = 'C'
 		} else answer = 'D'
-		question.innerHTML = questQ[qChoice][0]
+		question.innerText = `${questQ[qChoice][0]}`
 		a.innerText = `A - ${questQ[qChoice][1]}`
 		b.innerText = `B - ${questQ[qChoice][2]}`
 		c.innerText = `C - ${questQ[qChoice][3]}`
