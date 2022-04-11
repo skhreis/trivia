@@ -10,6 +10,7 @@ let arr = []
 let answer = ''
 let choice = ''
 let click = false
+let score = 0
 
 // ===  Question and Answer Functionality  === 
 let questQ = [
@@ -52,7 +53,7 @@ let questQ = [
 
 function generateQ() {
 	if(q < 11) {
-		qns.innerText = `Question ${q}/10`
+		qns.innerHTML = `Question ${q}/10 <br /><br />Score ${score}`
 		let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
 		for(let i = 0; i<10; i++){
 			while(qChoice == arr[i]) {
