@@ -10,9 +10,9 @@ Trivia is a classic game where the user gets to test their desired categories wi
 - If right, give points, and display they are correct and no points with a incorrect message if they get it wrong.
 - Buttons created for each instance.
 ## Wire Frames
- ![Wireframe1](https://cdn.discordapp.com/attachments/955541749516890142/962759266677174383/unknown.png)
- ![wireframe2](https://cdn.discordapp.com/attachments/955541749516890142/962759681741299792/unknown.png)
- ![wireframe3](https://cdn.discordapp.com/attachments/955541749516890142/962759793670492230/unknown.png)
+ [Wireframe1](https://cdn.discordapp.com/attachments/955541749516890142/962759266677174383/unknown.png)
+ [Wireframe2](https://cdn.discordapp.com/attachments/955541749516890142/962759681741299792/unknown.png)
+ [Wireframe3](https://cdn.discordapp.com/attachments/955541749516890142/962759793670492230/unknown.png)
 
 ## User Stories
 - Be able to reset the game whenever.
