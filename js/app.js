@@ -50,6 +50,7 @@ let questQ = [
 // c = 7,9,12
 // d = 0,3,5,10
 function startGame() {
+	click = true
 	bannerr.style.display = ''
 	bannerr.innerText = 'Welcome to Trivia! Game will start in just a moment!'
 	highScore = localStorage.getItem(saveKey)
@@ -92,7 +93,7 @@ function checkAnswer() {
 	click = true
 	if(choice === answer) {
 		bannerr.style.display = ''
-		bannerr.innerText = 'You are Correct!'
+		bannerr.innerText = 'You are correct!'
 		audioc.play()
 		score += parseInt(questQ[qChoice][5])
 		if(highScore < score) {
@@ -100,6 +101,7 @@ function checkAnswer() {
 			localStorage.setItem(saveKey, highScore)
 		}
 	} else {
+		bannerw.innerText = 'You are incorrect!'
 		bannerw.style.display = ''
 		audioi.play()
 	}
@@ -125,12 +127,20 @@ cache.addEventListener('click', () => {
 })
 
 
+function hideClick() {
+	bannerw.style.display = 'none'
+}
+
 a.addEventListener('click', () => {
 	if(!click){
 		choice = 'A'
 		click = true
 		checkAnswer()
-	} else console.log('Please wait to click again...')
+	} else {
+		bannerw.innerText = 'Please wait to click again...'
+		bannerw.style.display = ''
+		setTimeout(hideClick, 3000)
+	}
 })
 
 b.addEventListener('click', () => {
@@ -138,7 +148,11 @@ b.addEventListener('click', () => {
 		choice = 'B'
 		click = true
 		checkAnswer()
-	} else console.log('Please wait to click again...')
+	} else {
+		bannerw.innerText = 'Please wait to click again...'
+		bannerw.style.display = ''
+		setTimeout(hideClick, 3000)
+	}
 })
 
 c.addEventListener('click', () => {
@@ -146,7 +160,11 @@ c.addEventListener('click', () => {
 		choice = 'C'
 		click = true
 		checkAnswer()
-	} else console.log('Please wait to click again...')
+	} else {
+		bannerw.innerText = 'Please wait to click again...'
+		bannerw.style.display = ''
+		setTimeout(hideClick, 3000)
+	}
 })
 
 d.addEventListener('click', () => {
@@ -154,7 +172,11 @@ d.addEventListener('click', () => {
 		choice = 'D'
 		click = true
 		checkAnswer()
-	} else console.log('Please wait to click again...')
+	} else {
+		bannerw.innerText = 'Please wait to click again...'
+		bannerw.style.display = ''
+		setTimeout(hideClick, 3000)
+	}
 })
 
 

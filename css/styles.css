@@ -135,11 +135,10 @@ a:visited {
 	align-items: center;
 	background-color: lightgreen;
 	opacity: 0.6;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	border: 2px solid black;
 	height: 80px;
 	top: 40%;
-	width: 100%;
+	width: 99%;
 	z-index: 2;
 }
 
@@ -150,11 +149,10 @@ a:visited {
 	align-items: center;
 	opacity: 0.6;
 	background-color: red;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	border: 2px solid black;
 	height: 80px;
 	top: 40%;
-	width: 100%;
+	width: 99%;
 	z-index: 2;
 }
 
