@@ -42,7 +42,18 @@ let questQ = [
 // b = 2,4,8,13
 // c = 7,9,12
 // d = 0,3,5,10
+function startGame() {
+	bannerr.style.display = ''
+	bannerr.innerText = 'Welcome to Trivia! Game will start in just a moment!'
+	highScore = localStorage.getItem(saveKey)
+	setTimeout(generateQ, 5000)
+}
+
+
+
 let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
+
+
 
 function generateQ() {
 	if(q < 11) {
@@ -72,15 +83,16 @@ function generateQ() {
 		q++
 	} else finishGame()
 }
-generateQ()
 
 function checkAnswer() {
 	click = true
 	if(choice === answer) {
 		bannerr.style.display = ''
+		bannerr.innerText = 'You are Correct!'
 		score += parseInt(questQ[qChoice][5])
 		if(highScore < score) {
 			highScore = score
+			localStorage.setItem(saveKey, highScore)
 		}
 	} else {
 		bannerw.style.display = ''
@@ -91,8 +103,6 @@ function checkAnswer() {
 function finishGame() {
 	console.log("Your game has finished!")
 }
-
-
 
 
 a.addEventListener('click', () => {
@@ -127,3 +137,5 @@ d.addEventListener('click', () => {
 	} else console.log('Please wait to click again...')
 })
 
+
+startGame()
