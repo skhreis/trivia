@@ -29,6 +29,7 @@ a:visited {
 }
 
 .question {
+	font-size: 20px;
 	line-height: 140px;
 	position: relative;
 	align-items: center;
