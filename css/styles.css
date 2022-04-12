@@ -41,6 +41,30 @@ body {
 
 }
 
+.reset {
+	position: relative;
+	display: inline;
+	margin-bottom: 15px;
+	background-color: #455566;
+	height: 50px;
+	width: 150px;
+	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
+	border: #455566;
+	margin-right: 20px;
+}
+
+.cache {
+	position: relative;
+	display: inline;
+	margin-bottom: 15px;
+	background-color: #455566;
+	height: 50px;
+	width: 150px;
+	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
+	border: #455566 ;
+}
+
+
 .opt1 {
 	position: relative;
 	display: inline;
@@ -131,6 +155,16 @@ body {
 }
 
 .opt4:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.reset:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.cache:active {
 	transform: scale(0.98);
 	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }

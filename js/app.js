@@ -1,12 +1,14 @@
 // ===  Variables  ===
-const question = document.querySelector('.question') //selecting the div in which has the question
-const qns = document.querySelector('.qnumscore') // selecting the div that has the q# and score
+const question = document.querySelector('.question') // Question box.
+const qns = document.querySelector('.qnumscore') // Q# and score
 const a = document.querySelector('.opt1') // Option A
 const b = document.querySelector('.opt2') // Option B
 const c = document.querySelector('.opt3') // Option C
 const d = document.querySelector('.opt4') // Option D
 const bannerr = document.querySelector('.banner-right') // Green banner appears when right
 const bannerw = document.querySelector('.banner-wrong') // red banner appears when wrong
+const reset = document.querySelector('.reset') // Reset button
+const cache = document.querySelector('.cache') // Clear Scoreboard
 const saveKey = 'save'
 let highScore = 0
 let q = 1
@@ -21,21 +23,21 @@ bannerw.style.display = 'none'
 
 // ===  Question and Answer Functionality  === 
 let questQ = [
-	['The term "Y2K" was originated by ___.', 'Microsoft', 'David Kelly', 'IBM', ' David Eddy', '5'],
-	['What does “www” stand for in a website browser?', 'World Web Wide', 'World Wide Web', 'Web World Wide', 'Width of World Web', '5'],
-	['How long is an Olympic swimming pool (in meters)?', '25 Meters', '50 Meters', '75 Meters', '100 Meters', '5'], 
+	['The term "Y2K" was originated by ___.', 'Microsoft', 'David Kelly', 'IBM', ' David Eddy', '12'],
+	['What does “www” stand for in a website browser?', 'World Web Wide', 'World Wide Web', 'Web World Wide', 'Width of World Web', '10'],
+	['How long is an Olympic swimming pool (in meters)?', '25 Meters', '50 Meters', '75 Meters', '100 Meters', '10'], 
 	['What countries made up the original Axis powers in World War II?', 'Italy, France, Austria', 'Germany, Austria, Poland', 'Japan, China, Germany', 'Italy, Germany, Japan', '5'],
-	['Which country do cities of Perth, Adelade & Brisbane belong to?', 'New Zealand', 'Australia', 'Indonesia', 'Great Britan', '5'],
-	['What geometric shape is generally used for stop signs?', 'Hexagon', 'Heptagon', 'Enneagon', 'Octogon', '5'],
-	['What is "cynophobia"?', 'Fear of Dogs', 'Fear of Animals', 'Fear of Cryo', 'Fear of Cyno', '5'],
+	['Which country do cities of Perth, Adelade & Brisbane belong to?', 'New Zealand', 'Australia', 'Indonesia', 'Great Britan', '8'],
+	['What geometric shape is generally used for stop signs?', 'Hexagon', 'Heptagon', 'Enneagon', 'Octogon', '13'],
+	['What is "cynophobia"?', 'Fear of Dogs', 'Fear of Animals', 'Fear of Cryo', 'Fear of Cyno', '15'],
 	['What punctuation mark ends an imperative sentence?', 'Period', 'Question Mark', 'Exclamation Point', 'Comma', '5'],
-	['Who named the Pacific Ocean?', 'Christopher Columbus', 'Ferdinand Magellan', "Vasco da Gama's", 'Prince Vijaya', '5'],
-	['How many languages are written from right to left?', '11', '9', '12', '10', '5'],
-	['How many countries still have Shilling as currency?', 'One', 'Two', 'Three', 'Four', '5'],
-	['What is the name of the man who launched eBay back in 1995?', 'Pierre Omidyar', 'Jeff Bezos', 'Bill Gates', 'Nick Huzar', '5'],
-	['What is the name of the biggest technology company in South Korea?', 'Apple', 'Sony', 'Samsung', 'Nintendo', '5'],
-	['Which animal can be seen on the Porsche logo?', 'Donkey', 'Horse', 'Llama', 'Cheetah', '5'],
-	["Which monarch officially made Valentine's Day a holiday in 1537?", 'Henry VIII', 'William IV', 'George I', 'Victoria', '5']
+	['Who named the Pacific Ocean?', 'Christopher Columbus', 'Ferdinand Magellan', "Vasco da Gama's", 'Prince Vijaya', '6'],
+	['How many languages are written from right to left?', '11', '9', '12', '10', '9'],
+	['How many countries still have Shilling as currency?', 'One', 'Two', 'Three', 'Four', '7'],
+	['What is the name of the man who launched eBay back in 1995?', 'Pierre Omidyar', 'Jeff Bezos', 'Bill Gates', 'Nick Huzar', '10'],
+	['What is the name of the biggest technology company in South Korea?', 'Apple', 'Sony', 'Samsung', 'Nintendo', '12'],
+	['Which animal can be seen on the Porsche logo?', 'Donkey', 'Horse', 'Llama', 'Cheetah', '13'],
+	["Which monarch officially made Valentine's Day a holiday in 1537?", 'Henry VIII', 'William IV', 'George I', 'Victoria', '15']
 ]
 
 // a = 1,6,11,14
@@ -49,11 +51,7 @@ function startGame() {
 	setTimeout(generateQ, 5000)
 }
 
-
-
 let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
-
-
 
 function generateQ() {
 	if(q < 11) {
@@ -101,8 +99,20 @@ function checkAnswer() {
 }
 
 function finishGame() {
-	console.log("Your game has finished!")
+	bannerr.style.display = ''
+	bannerr.innerText = 'Your game has finished! Game will restart in 5 seconds.'
+	setTimeout(startGame, 5000)
 }
+
+reset.addEventListener('click', () => finishGame())
+
+
+cache.addEventListener('click', () => {
+	highScore = 0
+	localStorage.setItem(saveKey, highScore)
+	highScore = localStorage.getItem(saveKey)
+	qns.innerHTML = `<br /><br />Question ${q}/10 <br /><br /><br /><br /><br />Score ${score}<br />High Score ${highScore}`
+})
 
 
 a.addEventListener('click', () => {
