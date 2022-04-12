@@ -9,14 +9,16 @@ body {
 
 
 .question {
+	line-height: 140px;
 	position: relative;
 	align-items: center;
 	text-align: center;
 	display: inline-block;
 	height: 150px;
-	width: 300px;
+	width: 600px;
 	background-color: #4B4866;
 	box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
+	
 }
 
 .qnumscore {
@@ -40,8 +42,8 @@ body {
 	width: 300px;
 	box-shadow: rgba(75, 72, 102, 1) 0px 3px 8px;
 	border: #455566;
-	
 }
+
 .opt2 {
 	position: relative;
 	display: inline;
@@ -74,3 +76,53 @@ body {
 	display: inline;
 }
 
+.banner-right {
+	position: absolute;
+	text-align: center;
+	line-height: 75px;
+	align-items: center;
+	background-color: lightgreen;
+	opacity: 0.6;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 80px;
+	top: 40%;
+	width: 100%;
+	z-index: 2;
+}
+
+.banner-wrong {
+	position: absolute;
+	text-align: center;
+	line-height: 75px;
+	align-items: center;
+	opacity: 0.6;
+	background-color: red;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 80px;
+	top: 40%;
+	width: 100%;
+	z-index: 2;
+}
+
+
+.opt1:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.opt2:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.opt3:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.opt4:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}

@@ -5,12 +5,16 @@ const a = document.querySelector('.opt1')
 const b = document.querySelector('.opt2')
 const c = document.querySelector('.opt3')
 const d = document.querySelector('.opt4')
+const bannerr = document.querySelector('.banner-right')
+const bannerw = document.querySelector('.banner-wrong')
 let q = 1
 let arr = []
 let answer = ''
 let choice = ''
 let click = false
 let score = 0
+bannerr.style.display = 'none'
+bannerw.style.display = 'none'
 
 // ===  Question and Answer Functionality  === 
 let questQ = [
@@ -38,6 +42,8 @@ let questQ = [
 
 function generateQ() {
 	if(q < 11) {
+		bannerr.style.display = 'none'
+		bannerw.style.display = 'none'
 		qns.innerHTML = `<br /><br />Question ${q}/10 <br /><br /><br /><br /><br />Score ${score}`
 		let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
 		for(let i = 0; i<10; i++){
@@ -69,12 +75,14 @@ function checkAnswer() {
 	click = true
 	if(choice === answer) {
 		console.log('You are Correct!')
+		bannerr.style.display = ''
 		score += 50
 	} else {
 		console.log('You are Incorrect!')
+		bannerw.style.display = ''
 		score -= 10
 	}
-	setTimeout(generateQ, 0000)
+	setTimeout(generateQ, 3000)
 }
 
 function finishGame() {
