@@ -10,7 +10,12 @@ const bannerw = document.querySelector('.banner-wrong') // red banner appears wh
 const reset = document.querySelector('.reset') // Reset button
 const cache = document.querySelector('.cache') // Clear Scoreboard
 const saveKey = 'save'
+const audioc = new Audio('https://www.mboxdrive.com/correct.mp3')
+const audioi = new Audio('https://www.mboxdrive.com/incorrect.mp3')
+const audios = new Audio('https://www.mboxdrive.com/startgame.mp3')
+const audioe = new Audio('https://www.mboxdrive.com/gameend.mp3')
 let highScore = 0
+
 let q = 1
 let arr = []
 let answer = ''
@@ -48,6 +53,7 @@ function startGame() {
 	bannerr.style.display = ''
 	bannerr.innerText = 'Welcome to Trivia! Game will start in just a moment!'
 	highScore = localStorage.getItem(saveKey)
+	audios.play()
 	setTimeout(generateQ, 5000)
 }
 
@@ -87,6 +93,7 @@ function checkAnswer() {
 	if(choice === answer) {
 		bannerr.style.display = ''
 		bannerr.innerText = 'You are Correct!'
+		audioc.play()
 		score += parseInt(questQ[qChoice][5])
 		if(highScore < score) {
 			highScore = score
@@ -94,6 +101,7 @@ function checkAnswer() {
 		}
 	} else {
 		bannerw.style.display = ''
+		audioi.play()
 	}
 	setTimeout(generateQ, 3000)
 }
@@ -101,6 +109,7 @@ function checkAnswer() {
 function finishGame() {
 	bannerr.style.display = ''
 	bannerr.innerText = 'Your game has finished! Game will restart in 5 seconds.'
+	audioe.play()
 	setTimeout(startGame, 5000)
 }
 
@@ -112,6 +121,7 @@ cache.addEventListener('click', () => {
 	localStorage.setItem(saveKey, highScore)
 	highScore = localStorage.getItem(saveKey)
 	qns.innerHTML = `<br /><br />Question ${q}/10 <br /><br /><br /><br /><br />Score ${score}<br />High Score ${highScore}`
+	finishGame()
 })
 
 

@@ -30,13 +30,14 @@ a:visited {
 
 .question {
 	font-size: 20px;
-	line-height: 140px;
+    overflow-wrap: break-word;
+	line-height: 150px;
 	position: relative;
 	align-items: center;
 	text-align: center;
 	display: inline-block;
 	height: 150px;
-	width: 600px;
+	width: 800px;
 	background-color: #4B4866;
 	box-shadow: rgba(0, 0, 0, 1) 0px 3px 8px;
 	
