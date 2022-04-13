@@ -111,7 +111,7 @@ function checkAnswer() {
 }
 
 function finishGame() {
-	bannerr.style.display = ''
+	bannerr.style.display = 'none'
 	bannerr.innerText = 'Your game has finished! Game will restart in 5 seconds.'
 	audioe.play()
 	setTimeout(startGame, 5000)
