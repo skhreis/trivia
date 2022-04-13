@@ -54,9 +54,15 @@ function startGame() {
 	bannerr.style.display = ''
 	bannerr.innerText = 'Welcome to Trivia! Game will start in just a moment!'
 	highScore = localStorage.getItem(saveKey)
-	audios.play()
+	setTimeout(playStart, 1500)
 	setTimeout(generateQ, 5000)
 }
+
+
+function playStart() {
+	audios.play()
+}
+
 
 let qChoice = Math.round(Math.random() * (14.49 + 0.5) - 0.5)
 
@@ -175,7 +181,7 @@ d.addEventListener('click', () => {
 	} else {
 		bannerw.innerText = 'Please wait to click again...'
 		bannerw.style.display = ''
-		setTimeout(hideClick, 3000)
+		setTimeout(hideClick, 3000)gi
 	}
 })
 
