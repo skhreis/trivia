@@ -55,6 +55,8 @@ function startGame() {
 	bannerr.innerText = 'Welcome to Trivia! Game will start in just a moment!'
 	highScore = localStorage.getItem(saveKey)
 	audios.play()
+	q = 1
+	score = 0
 	setTimeout(generateQ, 5000)
 }
 
@@ -111,7 +113,8 @@ function checkAnswer() {
 }
 
 function finishGame() {
-	bannerr.style.display = 'none'
+	bannerr.style.display = ''
+	bannerw.style.display = 'none'
 	bannerr.innerText = 'Your game has finished! Game will restart in 5 seconds.'
 	audioe.play()
 	setTimeout(startGame, 5000)
